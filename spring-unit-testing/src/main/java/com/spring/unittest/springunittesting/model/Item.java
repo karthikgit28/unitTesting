@@ -1,7 +1,14 @@
 package com.spring.unittest.springunittesting.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+
+@Entity
 public class Item {
 	
+	@Id
 	private int id;
 	
 	private String name;
@@ -9,6 +16,13 @@ public class Item {
 	private String desc;
 	
 	private int quantity;
+	
+	@Transient
+	private int value;
+	
+	protected Item() {
+		
+	}
 
 	public Item(int id, String name, String desc, int quantity) {
 		super();
@@ -49,6 +63,15 @@ public class Item {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
 	
 	
 
