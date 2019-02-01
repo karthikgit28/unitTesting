@@ -26,4 +26,8 @@ public class ItemDataService {
 		return item;
 	}
 	
+	public Item saveToDb(Item item){
+		return repository.save(item);
+	}
+	
 }

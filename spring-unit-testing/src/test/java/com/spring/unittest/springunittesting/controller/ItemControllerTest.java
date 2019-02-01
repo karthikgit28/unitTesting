@@ -1,5 +1,7 @@
 package com.spring.unittest.springunittesting.controller;
 
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsEqual;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +67,13 @@ public class ItemControllerTest {
 		.andExpect(content().json("[{id:1,name:karthik,desc:new,quantity:2},{id:2,name:karthik2,desc:new2,quantity:3}]"))
 		.andReturn();
 		
+	}
+	
+	@Test
+	public void testPostRequest() throws Exception {
+		
+		RequestBuilder request = MockMvcRequestBuilders.post("/saveData").content("{\"id\":1,\"name\":\"Karthik\",\"desc\":\"new\",\"quantity\":2,\"value\":0}").contentType(MediaType.APPLICATION_JSON);
+		mock.perform(request).andExpect(status().isOk()).andReturn();
 	}
 	
 	
