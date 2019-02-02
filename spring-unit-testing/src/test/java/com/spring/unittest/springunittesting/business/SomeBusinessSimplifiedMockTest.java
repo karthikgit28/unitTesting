@@ -113,7 +113,7 @@ public class SomeBusinessSimplifiedMockTest {
 	public void captureMultipleArgument() {
 		list.add("Karthik1");
 		list.add("Karthik2");
-		
+		//assertEquals("Karthik1", list.get(0));
 		ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
 		//By default verify will check whether 1 timecall is made since two times its made need to specify times
 		verify(list,times(2)).add(captor.capture());

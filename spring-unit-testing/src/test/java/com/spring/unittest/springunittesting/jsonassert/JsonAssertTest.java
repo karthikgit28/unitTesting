@@ -20,7 +20,8 @@ public class JsonAssertTest {
 	@Test
 	public void jsonAssert_true() throws JSONException {
 		
-		String expected = "{\"id\":1,\"name\":\"Karthik\",\"desc\":\"new\",\"quantity\":2}";
+		String expected = "{\"id\":1,\"name"
+				+ ":\"Karthik\",\"desc\":\"new\",\"quantity\":2}";
 		//When true is passed exact output is mandatory since it compares all data with available expected result
 		JSONAssert.assertEquals(expected, actual, true);
 	}
